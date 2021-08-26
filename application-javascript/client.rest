@@ -1,0 +1,100 @@
+
+
+###
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+  "email": "nas@gmail.com",
+  "password": "nas12345",
+  "name": "N A Sifat"
+}
+
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "nas1@gmail.com",
+  "password": "nas12345"
+}
+
+
+###
+GET  http://localhost:3000/logout
+Content-Type: application/json
+
+
+###
+POST http://localhost:3000/createfile
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="uploadedFile"; filename="ttest.txt"
+
+< ./ttest.txt
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+###
+GET  http://localhost:3000/fileShare/withMe
+Content-Type: application/json
+
+# fileShare_file_nas1@gmail.com_ttest.txt_nas2@gmail.com
+
+
+###
+DELETE   http://localhost:3000/fileShare/fileShare_file_nas1@gmail.com_ttest.txt_nas2@gmail.com
+Content-Type: application/json
+
+
+
+
+
+###
+POST  http://localhost:3000/signatory/individual
+Content-Type: multipart/form-data ;boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="photoIdCard"; filename="test1.png"
+Content-Type: image/png
+< ./TestUploadFiles/test1.png
+
+
+# part-2
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="photo"; filename="test1.png"
+Content-Type: image/png
+< ./TestUploadFiles/test2.png
+
+
+# part-3
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="signature"; filename="test3.png"
+Content-Type: image/png
+
+< ./TestUploadFiles/test3.png
+
+# part-4
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="firstName"
+
+Nur Amin
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="lastName"
+
+Sifat
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="email"
+
+nas@gmail.com
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="abstract"
+
+this is abstract
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="other"
+
+this is other
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
